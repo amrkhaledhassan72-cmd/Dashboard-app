@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  vehicle-organiser:
+    build: .
+    container_name: vehicle-organiser
+    image: vehicle-organiser-image:1.0
+    ports:
+      - "3000:3000"  # React app port
+      - "4000:4000"  # JSON Server port
+    #stdin_open: true
