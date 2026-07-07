@@ -13,8 +13,8 @@ import logo from "../assets/logo.svg";
 import PopupModal from "./common/PopupModal";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentUser, logOut } from "../auth/authSlice";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const siteName = process.env.REACT_APP_NAME;
@@ -33,7 +33,7 @@ const Home = () => {
   const [addVehicleMutation, { isLoading: vehiclaLoading }] =
     useAddVehicleMutation();
 
-    const [updateVehicleMutation, { isLoading: updateVehiclaLoading }] =
+  const [updateVehicleMutation, { isLoading: updateVehiclaLoading }] =
     useUpdateVehicleMutation();
 
   const [isAddVehicleModalOpen, setIsAddVehicleModalOpen] = useState(false);
@@ -105,7 +105,9 @@ const Home = () => {
               className="d-flex align-items-center link-body-emphasis text-decoration-none brand-link"
             >
               <img src={logo} alt="Logo" />
-              <span className="fs-4 ms-2 text-white brand-name">{siteName}</span>
+              <span className="fs-4 ms-2 text-white brand-name">
+                {siteName}
+              </span>
             </a>
             <a
               href="/home"
@@ -176,7 +178,19 @@ const Home = () => {
           <div className="row m-0">
             <div className="col">
               <p className="text-white text-center m-0">
-                All rights Reserved @2023
+                <p>
+                  <p className="text-white text-center m-0">
+                    © 2026 All Rights Reserved. Developed by{" "}
+                    <a
+                      href="https://github.com/amrkhaledhassan72-cmd"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-decoration-none text-info"
+                    >
+                      Amr Khaled
+                    </a>
+                  </p>
+                </p>
               </p>
             </div>
           </div>
