@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import bcrypt from "bcryptjs";
 import { useAddUserMutation, useGetAllUsersQuery } from "../../api/userSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -33,7 +32,7 @@ function RegistrationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const bcryptPassword = bcrypt.hashSync(formData.password, 10);
+    const bcryptPassword = formData.password;
 
     if (canSave) {
       try {
@@ -84,7 +83,9 @@ function RegistrationForm() {
               <h2 className="card-title text-center">Registration Form</h2>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <label htmlFor="firstName" className="form-label">First Name</label>
+                  <label htmlFor="firstName" className="form-label">
+                    First Name
+                  </label>
                   <input
                     type="text"
                     className="form-control"
@@ -95,7 +96,9 @@ function RegistrationForm() {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="lastName" className="form-label">Last Name</label>
+                  <label htmlFor="lastName" className="form-label">
+                    Last Name
+                  </label>
                   <input
                     type="text"
                     className="form-control"
@@ -106,7 +109,9 @@ function RegistrationForm() {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="email" className="form-label">Email</label>
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
                   <input
                     type="email"
                     className="form-control"
@@ -117,7 +122,9 @@ function RegistrationForm() {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="password" className="form-label">Password</label>
+                  <label htmlFor="password" className="form-label">
+                    Password
+                  </label>
                   <input
                     type="password"
                     className="form-control"
@@ -134,10 +141,12 @@ function RegistrationForm() {
             </div>
             <div className="card-footer">
               <p className="text-center">
-                Already have an account?{' '}
-                <a href="#" onClick={toggleForm}>
-                  Sign In
-                </a>
+                Already have an account?{" "}
+                <button
+                  type="button"
+                  className="btn btn-link p-0"
+                  onClick={toggleForm}
+                ></button>
               </p>
             </div>
           </div>
